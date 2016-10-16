@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>Email Recipient</th>
+    <th>Email Subject</th>
+    <th>Email Body</th>
+  </thead>
+  <tbody>
+    <% $emails_sent.each do |email| %>
+        <tr>
+          <td><%= email[:owner] %></td>
+          <td><%= email[:subject] %></td>
+          <td><%= email[:body].html_safe %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+Go back <%= link_to 'Home', root_path %>
