@@ -1,18 +1,22 @@
-<table>
-  <thead>
-    <th>Email Recipient</th>
-    <th>Email Subject</th>
-    <th>Email Body</th>
-  </thead>
-  <tbody>
-    <% $emails_sent.each do |email| %>
-        <tr>
-          <td><%= email[:owner] %></td>
-          <td><%= email[:subject] %></td>
-          <td><%= email[:body].html_safe %></td>
-        </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if $emails_sent.present? %>
+    <table>
+      <thead>
+        <th>Email Recipient</th>
+        <th>Email Subject</th>
+        <th>Email Body</th>
+      </thead>
+      <tbody>
+        <% $emails_sent.each do |email| %>
+            <tr>
+              <td><%= email[:owner] %></td>
+              <td><%= email[:subject] %></td>
+              <td><%= email[:body].html_safe %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <p>No Emails</p>
+<% end %>
 
 Go back <%= link_to 'Home', root_path %>

@@ -7,9 +7,7 @@ class TestMailer < ApplicationMailer
     @user = user
 
     headers['X-Mailgun-Campaign-Id'] = "u0os1"
-    email = mail(to: @user,
-                 subject: "Your campaign is complete",
-            )
+    email = mail(to: @user, subject: "Welcome to StudySoup")
 
     all_emails = {}
 
