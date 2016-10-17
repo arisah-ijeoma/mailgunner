@@ -4,6 +4,8 @@ class TestMailer < ApplicationMailer
   $emails = []
 
   def new_elite_notetaker_notification(user='ijeomarisah@gmail.com')
+    # the default user is for testing purposes and can be changed to any working email
+
     @user = user
 
     headers['X-Mailgun-Campaign-Id'] = "u0os1"
