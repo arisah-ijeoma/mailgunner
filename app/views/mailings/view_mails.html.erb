@@ -1,4 +1,4 @@
-<% if $emails_sent.present? %>
+<% if $emails.present? %>
     <table>
       <thead>
         <th>Email Recipient</th>
@@ -6,7 +6,7 @@
         <th>Email Body</th>
       </thead>
       <tbody>
-        <% $emails_sent.each do |email| %>
+        <% $emails.each do |email| %>
             <tr>
               <td><%= email[:owner] %></td>
               <td><%= email[:subject] %></td>
