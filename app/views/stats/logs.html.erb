@@ -1,16 +1,20 @@
-<table>
-  <thead>
-  <th>Email Recipient</th>
-  <th>Email Event</th>
-  </thead>
-  <tbody>
-  <% @opens_and_clicks.each do |e| %>
-      <tr>
-        <td><%= e['recipient'] %></td>
-        <td><%= (e['event'] == 'clicked') ? ("clicked #{e['url']}") : e['event'] %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<% if @opens_and_clicks.present? %>
+    <table>
+      <thead>
+      <th>Email Recipient</th>
+      <th>Email Event</th>
+      </thead>
+      <tbody>
+      <% @opens_and_clicks.each do |e| %>
+          <tr>
+            <td><%= e['recipient'] %></td>
+            <td><%= (e['event'] == 'clicked') ? ("clicked #{e['url']}") : e['event'] %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <p>No Logs</p>
+<% end %>
 
 Go back <%= link_to 'Home', root_path %>
