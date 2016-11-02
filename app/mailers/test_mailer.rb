@@ -1,7 +1,7 @@
 class TestMailer < ApplicationMailer
   default from: "jay@studysoup.com"
 
-  $emails = []
+  $global_emails = []
 
   def new_elite_notetaker_notification(user='ijeomarisah@gmail.com')
     # the default user is for testing purposes and can be changed to any working email
@@ -17,6 +17,6 @@ class TestMailer < ApplicationMailer
     all_emails[:subject] = email.subject
     all_emails[:body] = email.body.encoded
 
-    $emails << all_emails
+    $global_emails << all_emails
   end
 end

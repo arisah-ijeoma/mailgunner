@@ -3,12 +3,14 @@
       <thead>
       <th>Email Recipient</th>
       <th>Email Event</th>
+      <th>Time of Event</th>
       </thead>
       <tbody>
       <% @opens_and_clicks.each do |e| %>
           <tr>
             <td><%= e['recipient'] %></td>
             <td><%= (e['event'] == 'clicked') ? ("clicked #{e['url']}") : e['event'] %></td>
+            <td><%= Time.at(e['timestamp']).utc %></td>
           </tr>
       <% end %>
       </tbody>

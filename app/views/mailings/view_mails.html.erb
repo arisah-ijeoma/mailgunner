@@ -1,4 +1,4 @@
-<% if $emails.present? %>
+<% if $global_emails.present? %>
     <table>
       <thead>
         <th>Email Recipient</th>
@@ -6,7 +6,7 @@
         <th>Email Body</th>
       </thead>
       <tbody>
-        <% $emails.each do |email| %>
+        <% $global_emails.each do |email| %>
             <tr>
               <td><%= email[:owner] %></td>
               <td><%= email[:subject] %></td>
